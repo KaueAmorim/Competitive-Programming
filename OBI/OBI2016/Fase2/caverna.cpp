@@ -14,33 +14,29 @@ const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 
 int main(){ _
     
-    int n, m; cin >> n >> m;
-    int arr[n+2];
+    ll n, m, x; cin >> n >> m;
     bool sequencia = true;
+    ll soma = 0;
+    ll y = -1;
     
-    arr[0] = -INF;
-    arr[n+1] = INF;
-    
-    for(int i = 1; i < n + 1; i++){
-        cin >> arr[i];
-    }
-    
-    for(int i = 1; i <= n; i++){
-        arr[i] = min(arr[i], (m - arr[i]));
-        if(arr[i] < arr[i-1] ||  arr[i] > arr[i+1]){
-            arr[i] = max(arr[i], (m - arr[i]));
+    while(n--){
+        cin >> x;
+        x = min(x, (m - x));
+        if(x < y){
+            x = max(x, (m - x));
         }
-    }
-    
-    for(int i = 1; i <= n; i++){
-        if(arr[i] < arr[i-1] ||  arr[i] > arr[i+1]){
+        
+        if(x < y){
             sequencia = false;
             break;
         }
-        
+        else{
+            y = x;
+            soma += x;
+        }
     }
     
-    if(sequencia) cout << accumulate(arr+1, arr + n + 1, 0) << endl;
+    if(sequencia) cout << soma << endl;
     else cout << -1 << endl;
    
     return 0;
