@@ -12,37 +12,30 @@ typedef long long ll;
 const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 
-ll solução(int *bolsa, int dias, int taxa){
-
-	int lucroAtual, lucroFinal, lucroMaximo;
-
-	lucroMaximo = 0;
-	lucroAtual = lucroFinal = bolsa[0];
-	
-	for(int i = 1; i < dias; i++){
-		if((lucroAtual > bolsa[i] && (lucroAtual - bolsa[i] >= taxa)) || bolsa[i] < lucroFinal){
-		
-			if(lucroAtual - lucroFinal - taxa > 0) lucroMaximo += lucroAtual - lucroFinal - taxa;
-			lucroAtual = lucroFinal = bolsa[i];
-		}
-
-		if(bolsa[i] > lucroAtual) lucroAtual = bolsa[i];
-	}
-
-	if(lucroAtual - lucroFinal - taxa > 0) lucroMaximo += lucroAtual - lucroFinal - taxa;
-
-	return lucroMaximo;
-
-}
-
-int main (){
-
-	int n, c; cin >> n >> c;
-	int cotações[200001];
-
-	for(int i = 0; i < n; i++) cin >> cotações[i];
-
-	cout << solução(cotações, n, c) << endl;
-
-        return 0;
+int main(){ _
+    
+    int n, c;
+    cin >> n >> c;
+    
+    vector<int> cotações(n);
+    for (int i = 0; i < n; i++) cin >> cotações[i];
+    
+    ll atual_sem_ação = 0; // Lucro máximo sem ação comprada até o momento
+    ll atual_com_ação = -cotações[0] - c; // Lucro máximo com ação comprada até o momento
+    
+    for(int i = 1; i < n; i++) {
+        ll anterior_sem_ação = atual_sem_ação;
+        ll anterior_com_ação = atual_com_ação;
+        
+        // Atualizando o estado atual sem comprar ação
+        atual_sem_ação = max(anterior_sem_ação, anterior_com_ação + cotações[i]);
+        
+        // Atualizando o estado atual com ação comprada
+        atual_com_ação = max(anterior_com_ação, anterior_sem_ação - cotações[i] - c);
+    }
+    
+    // O resultado estará em atual_sem_ação, pois é o estado final sem ação comprada
+    cout << atual_sem_ação << endl;
+    
+    return 0;
 }
