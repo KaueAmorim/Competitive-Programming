@@ -30,9 +30,9 @@ int main(){ _
         
                 int vivas = 0;
     			
-    			if(op % 2 == 0){
-            		
-            	    if(matriz2[i-1][j-1] == '1') vivas++;
+                if(op % 2 == 0){
+                    
+                    if(matriz2[i-1][j-1] == '1') vivas++;
                 	if(matriz2[i-1][j] == '1') vivas++;
                 	if(matriz2[i-1][j+1] == '1') vivas++;
                 	if(matriz2[i][j-1] == '1') vivas++;
@@ -52,8 +52,8 @@ int main(){ _
             	}
             	
             	else{
-            	
-            	    if(matriz1[i-1][j-1] == '1') vivas++;
+                    
+                    if(matriz1[i-1][j-1] == '1') vivas++;
                 	if(matriz1[i-1][j] == '1') vivas++;
                 	if(matriz1[i-1][j+1] == '1') vivas++;
                 	if(matriz1[i][j-1] == '1') vivas++;
