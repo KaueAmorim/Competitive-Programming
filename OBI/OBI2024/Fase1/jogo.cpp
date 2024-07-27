@@ -28,11 +28,11 @@ int main(){ _
     	for(int i = 1; i <= n; i++){
         	for(int j = 1; j <= n; j++){
         
-            	int vivas = 0;
+                int vivas = 0;
     			
     			if(op % 2 == 0){
             		
-            		if(matriz2[i-1][j-1] == '1') vivas++;
+            	    if(matriz2[i-1][j-1] == '1') vivas++;
                 	if(matriz2[i-1][j] == '1') vivas++;
                 	if(matriz2[i-1][j+1] == '1') vivas++;
                 	if(matriz2[i][j-1] == '1') vivas++;
