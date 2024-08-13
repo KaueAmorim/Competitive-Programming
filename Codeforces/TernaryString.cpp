@@ -22,14 +22,14 @@ int main(){ _
         int resposta = INF;
         int teste[3] = {0, 0, 0};
         int inicio = 0;
-        int final = 0;
+        int fim = 0;
 
         for( ; inicio < s.size(); inicio++){
-            for( ; final < s.size(); final++){
+            for( ; fim < s.size(); fim++){
                 if(teste[0] && teste[1] && teste[2]) break;
-                teste[s[final] - '1']++;
+                teste[s[fim] - '1']++;
             }
-            if(teste[0] && teste[1] && teste[2]) resposta = min(resposta, final - inicio);
+            if(teste[0] && teste[1] && teste[2]) resposta = min(resposta, fim - inicio);
             teste[s[inicio] - '1']--;
         }
 
