@@ -28,7 +28,7 @@ void solução() {
             return;
         }
     }
-    cout << 0 << endl;
+    cout << 0 << endl; //Caso o return não seja acionado, sabemos que array original é um good array. Logo, não precisamos retirar nenhum elemento e podemos imprimir 0.
 }
 
 int main(){ _
