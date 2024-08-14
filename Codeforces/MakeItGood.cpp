@@ -23,7 +23,7 @@ void solução() {
         
         if(v[i] > v[i - 1]) teste = false; //Se v[i] > v[i - 1], então não é mais possível formar um good array olhando da direita para esquerda, ou seja, agora devemos olhar da esquerda para direita.
         
-        if(v[i] < v[i - 1] && !teste){ //Se v[i] < v[i - 1], então não é mais possível formar um good array com um índice menor do que o atual, ou seja, caso nossa condição seja verdadeira, achamos nosso good array.
+        if(v[i] < v[i - 1] && !teste){ //Se v[i] < v[i - 1], então não é mais possível formar um good array com um índice menor do que o atual, ou seja, achamos nosso good array.
             cout << i << endl; //Como um array sempre inicia no índice 0, se o 'i' é 3, significa que existem 3 elementos atrás de 'i'. Logo, o 'i' representa exatamente a quantidade de elementos de que precisamos retirar do array original.
             return;
         }
