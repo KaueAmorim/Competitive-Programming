@@ -24,7 +24,6 @@ void dfs(int x){
             distancia[i] = distancia[x] + 1;
             dfs(i);
         }
-
     }
 }
 
