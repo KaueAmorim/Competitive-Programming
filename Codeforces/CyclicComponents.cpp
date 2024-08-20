@@ -24,7 +24,6 @@ void dfs(int x){
     for(auto i : grafo[x]){
         if(!visitado[i]){
             elementos.push(i);
-            
             dfs(i);
         }
     }
