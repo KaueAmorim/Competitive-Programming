@@ -1,4 +1,4 @@
-//RESPOSTA se houver mais de um par possível, indique qualquer um entre os possíveis.
+//RESPOSTA se houver mais de um par possível, indique o par em que as estações escolhidas fiquem mais distante da estação 1.
 
 #include <bits/stdc++.h>
  
