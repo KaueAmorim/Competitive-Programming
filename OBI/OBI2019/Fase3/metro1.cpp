@@ -1,4 +1,4 @@
-//RESPOSTA Se houver mais de um par possível, indique qualquer um entre os possíveis.
+//RESPOSTA se houver mais de um par possível, indique qualquer um entre os possíveis.
 
 #include <bits/stdc++.h>
  
