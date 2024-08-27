@@ -63,6 +63,10 @@ pair<int, int> find_diametro(int x){
             v = i;
         }
     }
+    
+    // enraizamos a árvore em v
+    distancia[x][v] = 0;
+    dfs(v, 0, x);
 
     return {u, v};
 }
@@ -74,17 +78,17 @@ int find_centro(int x){
 	int u = diam.f; 
     int v = diam.s;
 
-    // após encontrar o diâmetro, a segunda dfs enraizou a árvore em u
+    // após encontrar o diâmetro, enraizamos a árvore em v
 	// logo, iteramos o caminho de u para v pelos pais até encontrarmos o centro
 
 	// como o grafo não possui pesos, o centro será o vértice no "meio" do caminho entre u e v
 	// logo, subimos pelos pais partindo de u até encontrar esse vértice, guardando o tamanho do caminho em qtd
 
-    int atual = v; 
+    int atual = u; 
     int qtd = 0;
     while(true){
         // encontramos o centro
-		if(qtd == distancia[x][v]/2) return atual;
+		if(qtd == distancia[x][u]/2) return atual;
 
 		atual = pai[x][atual]; 
         qtd++;
