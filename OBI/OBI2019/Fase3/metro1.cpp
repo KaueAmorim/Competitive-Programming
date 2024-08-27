@@ -78,7 +78,7 @@ int find_centro(int x){
 	// logo, iteramos o caminho de u para v pelos pais até encontrarmos o centro
 
 	// como o grafo não possui pesos, o centro será o vértice no "meio" do caminho entre u e v
-	// logo, subimos pelos pais partindo de u até encontrar esse vértice, guardando o tamanho do caminho em qtd
+	// logo, subimos pelos pais partindo de v até encontrar esse vértice, guardando o tamanho do caminho em qtd
 
     int atual = v; 
     int qtd = 0;
